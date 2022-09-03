@@ -1,13 +1,196 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+
+
+@layer utilities {
+  .box {
+    max-width: 1500px;
+    margin: auto;
+    max-height: 860px;
+    margin-top: 7.5rem;
+    position: relative;
+    border-radius: 37px;
+    transform: rotate(-2.9deg);
+  }
+
+  .radio-item {
+    display: inline-block;
+    position: relative;
+    padding: ;
+    margin: 5px 0 0;
+    width: 100%;
+  }
+
+  .radio-item input[type="radio"] {
+    display: none;
+  }
+
+  .radio-item label {
+    color: white;
+    font-weight: bold;
+  }
+
+  .radio-item label:before {
+    content: " ";
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    margin: 0 5px 0 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 11px;
+    border: 1px solid white;
+    background-color: transparent;
+  }
+
+  .radio-item input[type="radio"]:checked + label:after {
+    border-radius: 11px;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 9px;
+    left: 4px;
+    content: " ";
+    display: block;
+    background: #5c26a0;
+  }
+
+  .radio-item input[type="radio"]:checked + label:before {
+    border: 1px solid #5c26a0;
+  }
+
+  .second-radio-item {
+    display: inline-block;
+    position: relative;
+    padding: ;
+    margin: 5px 0 0;
+    width: 100%;
+  }
+
+  .second-radio-item input[type="radio"] {
+    display: none;
+  }
+
+  .second-radio-item label {
+    color: white;
+    font-weight: bold;
+  }
+
+  .second-radio-item label:before {
+    content: " ";
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    margin: 0 5px 0 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 11px;
+    border: 1px solid white;
+    background-color: transparent;
+  }
+
+  .second-radio-item input[type="radio"]:checked + label:after {
+    border-radius: 11px;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 9px;
+    left: 4px;
+    content: " ";
+    display: block;
+    background: #64ffff;
+  }
+
+  .second-radio-item input[type="radio"]:checked + label:before {
+    border: 1px solid #64ffff;
+  }
+
+
+  .form-control {
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+  }
+
+  .form-control + .form-control {
+    margin-top: 1em;
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: blue;
+    width: 1.5em;
+    height: 1.5em;
+    display: grid;
+    place-content: center;
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    width: 1.3em;
+    height: 1.3em;
+    clip-path: polygon(0 38%, 44% 85%, 97% 0, 100% 9%, 45% 100%, 0% 51%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #1A161F;
+  }
+
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+
+  .grid-style {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
+
+  .base {
+    display: inline-block;
+    height: 70px;
+    margin-top: 300px;
+    position: relative;
+    width: 100%;
+  }
+
+  .base::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 125px;
+    background: inherit;
+    border-radius: 50%;
+  }
+
+  .second-base {
+    display: inline-block;
+    height: 70px;
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+  }
+
+  .second-base::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 125px;
+    background: inherit;
+    border-radius: 50%;
+  }
+
+  .invert {
+    transform: rotate(2.9deg);
+  }
 }
